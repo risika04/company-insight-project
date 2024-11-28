@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("https://img.freepik.com/free-photo/elegant-desk-composition-top-view_23-2148975800.jpg");
+            background-size: cover;
+            transition: background 0.5s ease-in-out;
+        }
+        header {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 0;
+            color: white;
+            display: flex;
+            justify-content: flex-end; /* Aligns the nav to the right */
+            align-items: center;
+            position: fixed;
+            top: 0;
+            z-index: 1000; /* Ensures header stays on top */
+        }
+
+        header nav {
+            margin-right: 20px; /* Adds some space on the right */
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .form-container {
+            background: rgb(208, 208, 208);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin-top: 60px; /* Adjust for fixed header */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #868385;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #696869;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+           
+            <a href="/">Search</a>
+            <a href="/plot/">Plot</a>
+        </nav>
+    </header>
+    
+    <div class="form-container">
+        <h1>Job Search</h1>
+        <form action="/submit" method="post">
+            <label for="industry">Industry:</label>
+            <select id="industry" name="industry" required>
+                <option value="" selected disabled>Select industry</option>
+                <option value="Defence & Aerospace">Defence & Aerospace</option>
+                <option value="Gaming">Gaming</option>
+                <option value="IT Services & Consulting">IT Services & Consulting</option>
+                <option value="Banking">Banking</option>
+                <option value="Government">Government</option>
+                <option value="Automobile">Automobile</option>
+                <option value="Clinical Research">Clinical Research</option>
+                <option value="BPO">BPO</option>
+                <option value="Internet">Internet</option>
+                <option value="Pharma">Pharma</option>
+            </select>
+
+            <label for="location">Location:</label>
+            <select id="location" name="location" required>
+                <option value="" selected disabled>Select location</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Ahmedabad">Ahmedabad</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Pune">Pune</option>
+                <option value="Gurugram">Gurugram</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Chennai">Chennai</option>
+                <option value="Indore">Indore</option>
+            </select>
+
+            <label for="type">Type:</label>
+            <select id="type" name="type" required>
+                <option value="" selected disabled>Select type</option>
+                <option value="Public">Public</option>
+                <option value="Forbes Global-2000">Forbes Global 2000</option>
+                <option value="Startup">Startup</option>
+                <option value="Conglomerate">Conglomerate</option>
+                <option value="Indian Unicorn">Indian Unicorn</option>
+                <option value="Central">Central</option>
+                <option value="State">State</option>
+                <option value="MNC">MNC</option>
+            </select>
+
+            <label for="rating">Rating:</label>
+            <input type="text" id="rating" name="rating" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

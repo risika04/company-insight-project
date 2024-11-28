@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Input Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("https://img.freepik.com/free-photo/elegant-desk-composition-top-view_23-2148975800.jpg");
+            background-size: cover;
+            transition: background 0.5s ease-in-out;
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgb(208, 208, 208);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #696869;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #696869;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Visualize Details</h1>
+        <form action="/submit_plot" method="post">
+            <label for="graphType">Type of Graph:</label>
+            <select id="graphType" name="graphType" onchange="updateDropdowns()">
+                <option value="" selected disabled>Select type</option>
+                <option value="bar">Bar Plot</option>
+                <option value="Scatter">Scatter Plot</option>
+                <option value="pie">Pie Plot</option>
+            </select>
+
+            <label for="column1">Column 1:</label>
+            <select id="column1" name="column1">
+                <option value="" selected disabled>Select column1</option>
+                <option value="company_name">Company Name</option>
+                <option value="location">Location</option>
+                <option value="industry">Industry</option>
+                <option value="years_old">Years Old</option>
+                <option value="company_rating">Company Rating</option>
+            </select>
+
+            <label for="column2" id="column2Label">Column 2:</label>
+            <select id="column2" name="column2">
+                <option value="" selected disabled>Select column2</option>
+                <option value="company_name">Company Name</option>
+                <option value="location">Location</option>
+                <option value="industry">Industry</option>
+                <option value="years_old">Years Old</option>
+                <option value="company_rating">Company Rating</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function updateDropdowns() {
+            var graphType = document.getElementById('graphType').value;
+            var column1 = document.getElementById('column1');
+            var column2 = document.getElementById('column2');
+
+            if (graphType === 'bar') {
+                column1.innerHTML = `
+                    <option value="" selected disabled>Select column1</option>
+                    <option value="company_rating">Company Rating</option>
+                `;
+                column2.innerHTML = `
+                    <option value="" selected disabled>Select column2</option>
+                    <option value="location">Location</option>
+                    <option value="type">Type</option>
+                    <option value="industry">Industry</option>
+                `;
+                column2.style.display = 'block';
+                document.getElementById('column2Label').style.display = 'block';
+            } else if (graphType === 'Scatter') {
+                column1.innerHTML = `
+                    <option value="" selected disabled>Select column1</option>
+                    <option value="company_rating">Company Rating</option>
+                `;
+                column2.innerHTML = `
+                    <option value="" selected disabled>Select column2</option>
+                    <option value="industry">Industry</option>
+                    <option value="years_old">Years Old</option>
+                    <option value="size">Size</option>
+                `;
+                column2.style.display = 'block';
+                document.getElementById('column2Label').style.display = 'block';
+            } else if (graphType === 'pie') {
+                column1.innerHTML = `
+                    <option value="" selected disabled>Select column1</option>
+                    <option value="company_rating">Company Rating</option>
+                    <option value="industry">Industry</option>
+                    <option value="size">Size</option>
+                `;
+                column2.style.display = 'none';
+                document.getElementById('column2Label').style.display = 'none';
+            } else {
+                column1.innerHTML = `
+                    <option value="" selected disabled>Select column1</option>
+                    <option value="company_name">Company Name</option>
+                    <option value="location">Location</option>
+                    <option value="industry">Industry</option>
+                    <option value="years_old">Years Old</option>
+                    <option value="company_rating">Company Rating</option>
+                    
+                `;
+                column2.innerHTML = `
+                    <option value="" selected disabled>Select column2</option>
+                    <option value="company_name">Company Name</option>
+                    <option value="location">Location</option>
+                    <option value="industry">Industry</option>
+                    <option value="years_old">Years Old</option>
+                    <option value="company_rating">Company Rating</option>
+                `;
+                column2.style.display = 'none';
+                document.getElementById('column2Label').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

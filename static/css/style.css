@@ -1,0 +1,102 @@
+.ezy__contact8_YEJY7IB7 {
+	/* Bootstrap variables */
+	--bs-body-color: #28303b;
+	--bs-body-bg: rgb(250, 232, 217);
+
+	/* Easy Frontend variables */
+	--ezy-theme-color: rgb(13, 110, 253);
+	--ezy-theme-color-rgb: 13, 110, 253;
+	--ezy-form-rgb: 255, 255, 255;
+
+	background-color: var(--bs-body-bg);
+	padding: 70px 0;
+}
+
+/* Gray Block Style */
+.gray .ezy__contact8_YEJY7IB7,
+.ezy__contact8_YEJY7IB7.gray {
+	/* Bootstrap variables */
+	/* Easy Frontend variables */
+	--ezy-form-rgb: 246, 246, 246;
+}
+
+/* Dark Gray Block Style */
+.dark-gray .ezy__contact8_YEJY7IB7,
+.ezy__contact8_YEJY7IB7.dark-gray {
+	/* Bootstrap variables */
+	--bs-body-color: #ffffff;
+
+	/* Easy Frontend variables */
+	--ezy-form-rgb: 30, 39, 53;
+}
+
+/* Dark Block Style */
+.dark .ezy__contact8_YEJY7IB7,
+.ezy__contact8_YEJY7IB7.dark {
+	/* Bootstrap variables */
+	--bs-body-color: #ffffff;
+
+	/* Easy Frontend variables */
+	--ezy-form-rgb: 11, 23, 39;
+}
+
+@media (min-width: 768px) {
+	.ezy__contact8_YEJY7IB7 {
+		padding: 100px 0;
+	}
+}
+
+.ezy__contact8_YEJY7IB7-heading {
+	font-weight: bold;
+	font-size: 25px;
+	line-height: 25px;
+	color: var(--bs-body-color);
+}
+
+@media (min-width: 768px) {
+	.ezy__contact8_YEJY7IB7-heading {
+		font-size: 45px;
+		line-height: 45px;
+	}
+}
+
+.ezy__contact8_YEJY7IB7-sub-heading {
+	font-size: 18px;
+	line-height: 25px;
+	color: var(--bs-body-color);
+}
+
+.ezy__contact8_YEJY7IB7-form-card {
+	background-color: rgba(var(--ezy-form-rgb), .2);
+	border: none;
+	box-shadow: none;
+	border-radius: 15px;
+}
+
+.ezy__contact8_YEJY7IB7 .form-control {
+	min-height: 48px;
+	line-height: 40px;
+	border-color: transparent;
+	background: rgba(var(--ezy-form-rgb), .9);
+	border-radius: 10px;
+	padding: .375rem 1.45rem;
+	color: var(--bs-body-color);
+}
+
+.ezy__contact8_YEJY7IB7 .form-control:focus {
+	border-color: #86b7fe;
+	box-shadow: none;
+}
+
+.ezy__contact8_YEJY7IB7-btn {
+	padding: 12px 30px;
+	color: #ffffff;
+	background-color: var(--ezy-theme-color);
+	border-color: var(--ezy-theme-color);
+}
+
+.ezy__contact8_YEJY7IB7-btn:hover {
+	background-color: rgba(var(--ezy-theme-color-rgb), .9);
+	border-color: rgba(var(--ezy-theme-color-rgb), .9);
+	color: #ffffff;
+}
